@@ -30,14 +30,7 @@ public class Magpie
      */
     public String getResponse(String statement) {
         String response = "";
-        boolean contains_result = false;
-        for (int i = 0; i < response.length(); i++){
-            if (response.charAt(i) == 32) {
-                contains_result = true;
-                break;
-            }
-        }
-        if (contains_result != true) {
+        if (statement.indexOf("      ") >= 0) {
             response = "Your input does not contain anything.";
         }
         else if (statement.indexOf("no") >= 0) {
